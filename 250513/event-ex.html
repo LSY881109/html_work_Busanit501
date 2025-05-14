@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #box {
+            width: 200px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <div id="box">
+
+    </div>
+    <script>
+        // 요소를 선택하는 작업, 특정 상수에 담았습니다.
+        const box = document.getElementById('box')
+        // 기능 분리 
+        const alertSample = () => alert("alert 테스트 함수입니다.")
+        // 기능2, 배경색을 변경하는 기능. 
+        const backgroundChange = () => box.style.background = 'blue'
+        // 기능3, 배경색을 원래대로 빨간색으로 변경하는 기능 추가하고, 이벤트 설정해보기
+        const backgroundChange2 = () => box.style.background = 'red'
+        //요소와 이벤트 연결 작업1
+        box.addEventListener('dblclick', alertSample)
+        //요소와 이벤트 연결 작업2
+        box.addEventListener('mouseenter', backgroundChange)
+        //요소와 이벤트 연결 작업3
+        box.addEventListener('mouseleave', backgroundChange2)
+        // 이벤트 적용.
+        // 기본 문법 btn.addEventListener(액션행위, 실행할 함수)
+        // 액션행위 : 1)
+        // 예시들
+        //         | 이벤트          | 설명             |
+        // | ------------ | -------------- |
+        // | `click`      | 클릭했을 때         |
+        // | `dblclick`   | 더블 클릭했을 때      |
+        // | `mousedown`  | 마우스 버튼을 누를 때   |
+        // | `mouseup`    | 마우스 버튼을 뗄 때    |
+        // | `mouseenter` | 요소 안에 마우스 진입 시 |
+        // | `mouseleave` | 요소에서 마우스가 나갈 때 |
+        // | `mousemove`  | 마우스가 움직일 때     |
+
+    </script>
+</body>
+
+</html>

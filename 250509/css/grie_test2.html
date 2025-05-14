@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            border: 5px solid pink;
+            display: grid;
+            /* fraction 분수 의 약자 */
+            /* grid-template-columns: 100px 200px 300px; */
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            /* grid-template-columns: repeat(3, 1fr); */
+            /* 3:요소갯수, 1fr :크기지정 */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            /* auto-fit : 요소 갯수 자동지정, minmax(최소, 최대) */
+        }
+
+        .box {
+            border: 1px solid red;
+            /* width: 200px; */
+        }
+
+        .container img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            /* 해당 이미지를 0.2초 정도 애니메이션 효과 */
+            transition: transform 0.2s;
+            /* 이미지 모서리 둥글게 처리하는 효과 */
+            border-radius: 8px;
+        }
+
+        .container img:hover {
+            /*마우스 오버(커서를 위에 올릴 경우) 확대 효과*/
+            transform: scale(1.03);
+            /* transform: translate(100px, 100px); */
+            /* transform: rotate(45deg) */
+            /* transform: skew(45deg, 30deg) */
+        }
+    </style>
+    <h2>나의 사진첩</h2>
+    <div class="container">
+        <img src="img/test1.jpg" alt="샘플사진1">
+        <img src="img/test2.jpg" alt="샘플사진2">
+        <img src="img/test3.png" alt="샘플사진3">
+        <img src="img/test4.jpg" alt="샘플사진4">
+        <img src="img/test5.jpg" alt="샘플사진5">
+        <img src="img/test6.jpg" alt="샘플사진6">
+        <img src="img/test7.jpg" alt="샘플사진7">
+        <!-- <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+        <div class="box">Box 4</div>
+        <div class="box">Box 5</div>
+        <div class="box">Box 6</div> -->
+    </div>
+    <h2>나의 상품</h2>
+    <div class="container">
+        <img src="img/test1.jpg" alt="샘플사진1">
+        <img src="img/test2.jpg" alt="샘플사진2">
+        <img src="img/test3.png" alt="샘플사진3">
+        <img src="img/test4.jpg" alt="샘플사진4">
+        <img src="img/test5.jpg" alt="샘플사진5">
+        <img src="img/test6.jpg" alt="샘플사진6">
+        <img src="img/test7.jpg" alt="샘플사진7">
+        <!-- <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+        <div class="box">Box 4</div>
+        <div class="box">Box 5</div>
+        <div class="box">Box 6</div> -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            height: 1000px;
+            /* 기본 방향이, 
+            flex-direction: row
+            가로 방향으로 나열 */
+            display: flex;
+
+            flex-direction: column;
+
+            /* 
+            flex-wrap: nowrap
+            기본 다음줄 넘김이 안되어 있음 */
+            /* flex-wrap: wrap; */
+
+            /* 
+            flex-flow: row wrap
+            이번에, 방향과 줄넘김 여부를 한번에 작성 가능.  */
+            /* flex-flow: column wrap; */
+
+            /* 정렬 기준 2가지, 
+            주축, 교차축
+            예를들어) flex , row, 가로 방향으로 나열, 
+            주축 : 가로, 교차축 : 세로, 
+            1) 주축 정렬, 
+            justify-content: flex-start(왼쪽 정렬) ;
+            flex-end(오른쪽 정렬), center(가운데 정렬)
+            baseline(텍스트 기준 정렬)
+            
+
+            2)교차축 정렬 
+            align-items: flex-start(위로 정렬) ;
+            flex-end(아래로 정렬), center(가운데 정렬)
+            stretch  길게 늘려서 정렬
+            space-between 여백 균등 분배, 
+            space-around 여백 포함해서 중앙 정렬
+            baseline(텍스트 기준 정렬) */
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .box {
+            border: 1px solid red;
+            width: 200px;
+        }
+    </style>
+
+</body>
+<div class="container">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+    <div class="box">Box 4</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 6</div>
+</div>
+
+</html>

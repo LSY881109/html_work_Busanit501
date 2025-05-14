@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>script 태그를 이용한 연습</h1>
+
+    <h2>변수 반대 상수, 대입 연산자 </h2>
+    <script>
+        // 옛날 방식, 
+        var x = 1
+        //요즘 방식, = 등호가 아니라, 대입 연산자, 
+        // 진행 방향은 , 오른쪽에서 왼쪽 방향으로 할당한다. 
+        let x2 = 2
+    </script>
+
+    <h2>문자열:작은 따옴표 또는 큰 따옴표 표기, 숫자 먼저</h2>
+    <!-- ex) "문자열", '문자열' -->
+    <!-- 문자열 마치 객체 처럼 사용이 가능, 
+     '문자열'.  점을 찍어 보면, 많은 기능을 이용할수 있음. 
+      -->
+
+    <!-- show 라는 버튼을 만들어서, 해당 이미지가 보이는 기능 만들기 -->
+    <input type="button" value="hide" onclick="
+    document.querySelector('#sample_img1').style.display = 'none'">
+    <input type="button" value="show" onclick="
+    document.querySelector('#sample_img1').style.display = 'block'">
+    <img id="sample_img1" src="/img/test1.jpg" alt="샘플이미지1" width="300px">
+    <h2>자바스크립트 문법을 연습 방법, script 태그 사용 가능,
+        2번째, 콘솔에서 확인 가능.
+        문자열의 내장 기능 중 , .length 속성, 문자열의 갯수 파악.
+    </h2>
+    <script>
+        document.write("문자열 내장 기능 이용 해서, 문자열 길이 구하는 예시 : " + "hello".length)
+        document.write("<br>")
+        document.write("hello".length)
+    </script>
+
+    <h2>자바스크립트 태그 안에서 기본 사용법2</h2>
+
+    <input type="text" placeholder="키 입력시 마다 경고창 발생" onkeydown="alert('키입력됨!!')">
+
+    <!-- 검색시 : JavaScript keydown event attribute , -->
+    <input type="text" placeholder="변경마다 알림 발생" onchange="alert('글자 변경시 마다 알림')">
+
+    <!-- <input type="button" value="hi" onclick="window.alert('hi')"> -->
+    <input type="button" value="hi" onclick="alert('hi')">
+
+    <h2>자바스크립트 태그 안에서 기본 사용법1</h2>
+    <!-- <script></script>태그를 이용해서, 
+    태그안에 자바스크립트 언어를 사용해서, 작업해보기 -->
+    <script>
+
+        // 자바스크립트의 내장이된 객체, 내장 객체, 그 중에서 한가지 
+        // 자주 사용하는 document 라는 내장 객체를 활용중.!!!
+
+        // write : 함수는 웹 브라우저 화면에 출력하는 용도로 사용
+        document.write('hello world')
+        document.write('<br>')
+        document.write('안녕하세요, 월요팅 해봐요^^')
+        document.write('<br>')
+        document.write(1 + 1)
+    </script>
+    <p>1+1</p>
+</body>
+
+</html>

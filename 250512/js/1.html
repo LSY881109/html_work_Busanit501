@@ -9,46 +9,29 @@
 </head>
 
 <body>
-    <!-- 
-    최종, css 파일을 분리해서 사용함, 
-    왜? 각 <style>를 1~5, index 파일에 모두 다 붙여넣기해야함. 
-        그런데 파일 분리를 하면, 해당 파일을 불러오는 코드 
-         한줄만 있으면 됩니다. 
-         예시 )  <link rel="stylesheet" href="css/style.css" />
-    <style>
-        #grid {
-            display: grid;
-            grid-template-columns: 150px 1fr;
-        }
 
-        body {
-            margin: 0;
-        }
-
-        h1 {
-            font-size: 45px;
-            text-align: center;
-            border-bottom: 1px solid gray;
-            margin: 0;
-        }
-
-        #grid ol {
-            /* ol , 모든 ol 요소를 의미, 
-        #grid ol , 아이디 grid 인 요소 하위에 있는 ol 요소를 가리킴 */
-            /* ol 은 기본, 블록 레벨, width 100%, 가로 한줄 전체 차지 */
-            border-right: 1px solid gray;
-            width: 100px;
-            margin-left: 20px;
-            margin-top: 0;
-            padding: 20px;
-
-        }
-
-        #article {
-            padding-left: 25px;
-        }
-    </style> -->
     <h1><a href="index.html">WEB</a></h1>
+    <!-- 오늘의 수업 주제, 자바스크립트 
+    목표 : 액션을 주어서, 무언가 반응을 얻는 방법 과정. 
+    onclick -> 클릭 시 , 무언가 액션을 하게 하는 속성.
+    -->
+    <!-- <input type="button" value="night" onclick="alert('alert 라는 js 내장 함수 이용')"> -->
+    <!-- night 버튼을 클릭 -> 배경화면을 변경하는 속성
+    -> 흰색 - 검정으로 변경
+    1) 배경 화면 속성을 선택.
+    document : 객체 (단순 설명, 도구 상자) = 기능과 속성을 가지고 있다
+    querySelector('body') : body 태그를 선택 기능.
+    .style.backgroundColor : css 에서 배경 화면 속성 선택.
+    : document.querySelector('body').style.backgroundColor = 'black'
+    (.) : 닷 연산자, 점 연산자 : 기능 또는 속성을 꺼낸다. -->
+    <input type="button" value="night" onclick="
+      document.querySelector('body').style.backgroundColor = 'black'
+      document.querySelector('body').style.color='white'
+      ">
+    <input type="button" value="day" onclick="
+      document.querySelector('body').style.backgroundColor = 'white'
+       document.querySelector('body').style.color='black'
+      ">
     <div id="grid">
         <ol>
             <li><a href="1.html">HTML</a></li>

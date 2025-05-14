@@ -1,0 +1,31 @@
+#grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-size: 45px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    margin: 0;
+}
+
+#grid ol {
+    /* ol , 모든 ol 요소를 의미, 
+#grid ol , 아이디 grid 인 요소 하위에 있는 ol 요소를 가리킴 */
+    /* ol 은 기본, 블록 레벨, width 100%, 가로 한줄 전체 차지 */
+    border-right: 1px solid gray;
+    width: 100px;
+    margin-left: 20px;
+    margin-top: 0;
+    padding: 20px;
+
+}
+
+#article {
+    padding-left: 25px;
+}

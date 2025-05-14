@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        /* h1 : 한줄 차지, 블록레벨 
+        a : 해당 콘텐츠 영역만 차지, 인라인 레벨  */
+        h1 {
+            /* 간단한 코드 리팩토링 
+            리팩토링? 중복 제거하고, 가독성 있게 코드 정리 */
+
+            /* 선 굵기, 색깔, 모양 표기 */
+            /* border-width: 5px;
+            border-color: red;
+            border-style: solid; */
+
+            /* 한 줄로 표시하기 */
+            border: 5px solid red;
+            /* 패딩 주기, :
+            패딩? 콘텐츠와 테두리 사이의 영역, 개발자 도구 f12 , 
+            오른쪽 박스 모델 레이아웃으로 확인 가능.  */
+            /* 
+            각각의 동서남북 4개의 방향을 의미, 
+            padding-left: ;
+            padding-right: ;
+            padding-bottom: ;
+            padding-top: ; */
+
+            /* 한번에 4개의 방향을 다 표기함 */
+            padding: 20px;
+
+            /* 한줄 차지, 해당 콘텐츠 영역만 차지 하게끔 변경.  
+            display: none; -> 요소가 사라짐, 
+            display:  inline; -> 요소가 해당 영역만큼 차지,
+            */
+            /* display: none; */
+
+        }
+    </style>
+
+    <h2>박스 모델 연습 해보기</h2>
+    <h1>CSS</h1> Cascading Style Sheets (<a href="https://en.wikipedia.org/wiki/CSS">(CSS)</a> is a style sheet language
+    used for describing the presentation of a document written in a markup language such as HTML.
+</body>
+
+</html>

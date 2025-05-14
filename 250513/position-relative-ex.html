@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .tooltip-wrapper {
+            /* 기준 위치  */
+            position: relative;
+            /* 기준 위치가 없는 경우, position: relative; 가 없을 경우 
+            그럴 때는 누가 기준 위치기ㅏ : html 태그가 기준 위치  */
+        }
+
+        .tooltip {
+            /* css에서 요소를 부모 요소를 기준으로 특정 위치에 배치할 때 사용
+            정밀한 위치 지정시 많이 사용함. 
+            문서 흐름에서 제거하고, 가장 가까운, postion: relative; 조상 요소를 기준으로 
+            위치를 잡기.  */
+
+            /* 옵션1, 부모 요소를 기준으로 아래쪽에 고정, 문서 흐름에서 제외더어 
+            다른 요소와 겹칠수 있다 */
+            position: absolute;
+            top: 100%;
+
+            left: 0;
+            background: black;
+            color: white;
+            padding: 5px;
+        }
+
+        /* ✅ fixed 예제 */
+        .tooltip-fixed {
+            /* 옵션2,  브라우저의 창에서 오른쪽 하단에 항상 고정. 스크롤해도 따라옴,
+            예시) 탑 버튼, */
+            /* position: fixed;
+            right: 200px;
+            bottom: 200px; */
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: darkgreen;
+            color: white;
+            padding: 8px;
+            z-index: 9999;
+        }
+
+        /* ✅ sticky 예제 */
+        .sticky-header {
+            /* 옵션3, 스크롤을 내리다가 top : 0 위치에 도달하면 고정 상태로 전환됨. 
+            보통, 헤더 , 네비게이션 메뉴에 활용. */
+            position: sticky;
+            top: 0;
+            background: navy;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .spacer {
+            height: 1000px;
+            background: #f5f5f5;
+        }
+    </style>
+
+    <div class="tooltip-wrapper">
+        버튼 위에 마우스를 올려보세요
+        <div class="tooltip">툴팁 내용</div>
+    </div>
+
+    <div class="sticky-header">스크롤 시 고정되는 헤더 (sticky)</div>
+
+    <div class="spacer"></div>
+
+    <div class="tooltip-fixed">항상 화면 하단에 고정된 툴팁 (fixed)</div>
+</body>
+
+</html>

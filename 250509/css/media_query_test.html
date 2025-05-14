@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* 모바일 인 경우, (480px이하) */
+        @media screen and (max-width: 480px) {
+            body {
+                background-image: url("img/test1.jpg");
+            }
+        }
+
+        /* 태블릿 인 경우, (481px ~ 768px) */
+        @media screen and (min-width: 481px) and (max-width: 768px) {
+            body {
+                background-image: url("img/test2.jpg");
+            }
+        }
+
+        /* 노트북 인 경우, (769px ~ 1024px) */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            body {
+                background-image: url("img/test3.png");
+            }
+        }
+
+        /* 데스크탑 인 경우, (1025px ~ ) */
+        @media screen and (min-width: 1025px) {
+            body {
+                background-image: url("img/test5.jpg");
+            }
+        }
+    </style>
+    <h2>미디어 쿼리, 화면 크기에 따라 배경 이미지 변경 해보기</h2>
+    <!-- 모바일 : max-width : 480px 
+    태블릿 : max-width : 768px 
+    노트북 : max-width : 1024px 
+    데스크탑 : max-width : 1200px  -->
+</body>
+
+</html>

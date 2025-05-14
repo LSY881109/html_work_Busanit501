@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 주석, 코드를 읽지 않는다, 
+    단순, 설명이나, 메세지를 전달하는 방법. 
+    대부분의, IDE(통합개발환경 툴, vscode) -> ctrl + / -->
+    <!-- css 작성하는 방법, 
+    1. 인라인, 줄에 속성으로 설정하는 방법, 비추 
+    2. html 파일안에 style 태그를 이용해서 이용하는 방법, 비추, 
+    3. css 파일을 분리해서 작업, 추천  -->
+    <style>
+        /* css 의 기본 문법, 
+        1. 선택자를 선택하구, 선택자 종류가 많습니다. 
+        2. 선택자에 필요한 속성 부여, 색깔, 크기, 배치 */
+        a,
+        h2 {
+            /* 박스 모델에서, 
+            a 태그는 해당 콘텐츠 크기만 차지하고, 인라인레벨
+            h2 태그는 한줄 전체를 다 차지함. 블록 레벨
+            그래서, 효과를 가운데 정렬을 해도, h2 만 적용이됨. */
+            color: black;
+            /* a 태그 밑줄 없애는 효과 */
+            text-decoration: none;
+            /* 글자 크기도 변경해보기 */
+            /* font-size: 50px;
+            text-align: center; */
+        }
+
+        /* 클래스 선택자 요소를 이용해서, 꾸미기 작업 
+        1. 설정하고 싶은 태그 요소에 class 라는 속성 이용함. 
+        2. class = 이름 지정, 예시, class="saw"
+        3. 적용은, css 적용하는 방법에서, 2번 째 방법은 일단 사용함. 
+        4. style 태그 안에서, 클래스 선택자를 이용해서 효과 주기. 
+        점(.) 클래스 명으로 사용하기. 
+        */
+        /* css 효과 주는 방법,  
+          선택자 { 효과1, 효과2,... }
+          예시)
+        */
+        .saw {
+            color: blue;
+            font-size: 50px;
+        }
+
+        /* 클래스 선택자 : 점(.)*/
+        .saw2 {
+            text-align: center;
+        }
+
+        /* 아이디 선택자 : 샵(#) */
+        #active {
+            color: gray;
+        }
+    </style>
+    <ol>
+        <!-- 인라인으로 css 적용해보기 -->
+        <li><a href="1.html" style="color: antiquewhite;">HTML</a></li>
+        <!-- css 다중 클래스를 적용시, 클래스명을 공백을 기준으로 새 클래스 추가 -->
+        <li><a href="2.html" class="saw saw2">CSS</a></li>
+        <li><a href="3.html" class="saw" id="active">JavaScript</a></li>
+    </ol>
+
+    <ol>
+        <li><a href="1.html">
+                <font color="red">HTML</font>
+            </a></li>
+        <li><a href="2.html">
+                <font color="red">CSS</font>
+            </a></li>
+        <li><a href="3.html">
+                <font color="red">JavaScript</font>
+            </a></li>
+    </ol>
+
+    <h2 class="saw saw2">html 태그는 꾸미는 용도가 아니다. </h2>
+    <p>예제로, html에서 단순 글꼴 변경해보기. </p>
+    <font color="red">test font 태그 이용해보기</font>
+    <p>유지 보수, 일괄 처리, 재사용을 편하게 하기 위해서, css 이용하기. </p>
+
+</body>
+
+</html>

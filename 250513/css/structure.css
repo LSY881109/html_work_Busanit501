@@ -1,0 +1,496 @@
+/* 구글의 웹폰트 사이트에서 Dongle 글 꼴 가져오기, 
+임베디드 , 코드 가져오기 에서, import 형식으로 진행
+순서1, 
+설정 */
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&family=Nanum+Pen+Script&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    /* 박스의 영역은 테두리 포함  */
+    box-sizing: border-box;
+    /* 순서2, 적용할 요소에 반영하기.  */
+    /* font-family: "Dongle"; */
+}
+
+a {
+    /* 기본 언더라인 제거 */
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+#container {
+    /* 0 : 위,아래의 마진, auto : 왼쪽,오른쪽 의 마진 -> 화면 중앙 배치 */
+    margin: 0 auto;
+
+    /* 변경 , 고정길이로 할 경우, 반응형 시, 폭이 고정이되어서, 작은 화면에서, 
+    계속 가로로 뻗은 상태로 보기 불편함, 그래서, 변경함 */
+    /* width: 1200px; */
+    width: 100%;
+    max-width: 1200px;
+    background-color: #fff;
+}
+
+/* 헤더 작업 */
+
+/* header {
+    width: 100%;
+    max-width: 1200px;
+    height: 100px;
+    background-color: coral;
+} */
+/* ✅ 헤더 전체를 Flex로 구성 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: auto;
+    background-color: coral;
+    flex-wrap: wrap;
+    /* 모바일에서 줄바꿈 가능하게 */
+}
+
+/* 헤더에서 특정 로고의 위치를 배치할 때 자주 사용함.  */
+/* 세로로 중간에 맞춤 , 줄간격을 높이 값과 같게 */
+/* #logo {
+   
+    float: left;
+    width: 250px;
+    height: 100px;
+  
+    line-height: 100px;
+    padding-left: 20px;
+} */
+/* ✅ 로고 */
+#logo {
+    line-height: 1;
+}
+
+/* #logo h1 {
+    font-family: "Dongle";
+    font-weight: 700;
+    font-size: 40px;
+    color: #fff; */
+/* 텍스트의 그림자 넣기 
+    옵션1, 0 : 가로 오프셋, 텍스트 기준으로 그림자의 수평 위치 조정 양수 : 오른쪽, 음수 : 왼쪽
+    옵션2,-1px : 세로 오프셋 , 텍스트 기준으로 그림자의 수직 위치 조정 양수 : 아래, 음수 : 위로
+    옵션3, 0 : 그림자의 퍼지는 정도(흐림 효과), 0이면 날까롭게, / 값이 커지면 부드럽게 퍼진다 라고 표현
+    옵션4, #222 : 그림자의 색을 지정함, HEX, RGB, RGBA, 
+    */
+/* text-shadow: 0 5px 0 #519c33d2;
+} */
+#logo h1 {
+    font-family: "Dongle", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 0 5px 0 #519c33d2;
+}
+
+/* nav {
+    float: right;
+    width: 900px;
+    height: 100px;
+    padding-top: 40px;
+} */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* #topMenu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    height: 60px;
+} */
+#topMenu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+#menuToggle {
+    display: none;
+    /* 데스크탑에서는 버튼 숨김 */
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px;
+}
+
+/* #topMenu>li {
+    float: left; */
+/* html 요소의 위치를 기준 위치로 설정하는 속성, 
+    요소를 문서 흐름에서 유지하면 자기 자신을 기준으로 
+    이동 할수 있게 설정.  */
+/* 옵션, top, left, bottom, right , z-index(겹침의 순서, 값이 클수로 위에 배치) */
+/* 여기가 기준 위치 입니다 */
+/* position: relative; */
+/* top: 200px; */
+/* left: 200px; */
+/* z-index: 10; */
+/* } */
+
+/* #topMenu>li>a {
+    display: block; */
+/* 부모의 요소의 글꼴 크기를 기준으로 상대 크기를 잡는 단위. 
+    예시) 1em , 부모 요소의 현재 글꼴 크기와 동일, 
+    예시) 1.1em , 부모 요소의 글꼴 크기보다 10% 더큼, 
+    예시) 0.9em , 부모 요소의 글꼴 크기보다 10% 더 작음,  
+    1em = 16px 
+    1.1em = 16 * 1.1 = 17.6px*/
+/* font-size: 1.1em; */
+
+/* color: #fff;
+    font-weight: 600;
+    padding: 20px 60px;
+
+} */
+#topMenu>li>a {
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+}
+
+#topMenu>li>a:hover {
+    color: aqua;
+    text-shadow: 0 -5px 0 #222;
+}
+
+/* 본문 작업 */
+
+.contents {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    width: 1000px;
+    /* 위,아래는 50px 여백 주고, 좌,우 자동 조절 */
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 0;
+}
+
+main>section {
+    margin-top: 60px;
+}
+
+
+main h2 {
+    font-size: 1.5em;
+    line-height: 2.5;
+}
+
+main div {
+    margin-top: 20px;
+}
+
+main h3 {
+    font-size: 1.2em;
+    line-height: 2.2;
+}
+
+/* .detail p {
+    line-height: 2.0;
+    color: #222;
+} */
+
+.detail {
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+#detail-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail>img {
+    width: 300px;
+    max-width: 100%;
+    flex-shrink: 0;
+    border-radius: 20px;
+}
+
+.detail>p {
+    flex: 1;
+    min-width: 200px;
+    word-break: break-word;
+}
+
+/* .detail>img {
+    width: 300px;
+    float: left;
+    margin-right: 50px;
+    border-radius: 20px;
+} */
+
+.schedule h4 {
+    font-size: 1.2em;
+}
+
+.schedule ul {
+    list-style: none;
+}
+
+.schedule ul li {
+    line-height: 2;
+}
+
+/* 푸터 영역 */
+/* 데스크탑 기준 제한 */
+/* footer {
+    width: 100%;
+    max-width: 1200px;
+   
+    height: 100px;
+    border-top: 2px solid #222;
+} */
+
+/* #bottomMenu {
+    width: 100%;
+    height: 20px;
+    margin-left: 60px;
+} */
+
+/* #bottomMenu ul {
+    margin-top: 15px;
+} */
+
+/* #bottomMenu ul li {
+    float: left;
+    padding: 5px 20px;
+    border-right: 1px solid #ddd;
+} */
+
+/* #bottomMenu ul li:last-child {
+    border: none;
+
+} */
+
+/* #bottomMenu ul li a,
+#bottomMenu ul li a:visited {
+    font-size: 15px;
+    color: #666;
+} */
+
+/* flex 버전으로 변경 */
+footer {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    padding: 20px 30px;
+    border-top: 2px solid #222;
+    box-sizing: border-box;
+}
+
+#bottomMenu {
+    width: 100%;
+    margin-left: 0;
+    display: flex;
+    /* ✅ 가운데 정렬을 위한 Flex */
+    justify-content: center;
+    /* ✅ 수평 가운데 정렬 */
+}
+
+#bottomMenu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#bottomMenu ul li {
+    padding: 5px 20px;
+    border-right: 1px solid #ddd;
+}
+
+#bottomMenu ul li:last-child {
+    border: none;
+}
+
+#bottomMenu ul li a,
+#bottomMenu ul li a:visited {
+    font-size: 15px;
+    color: #666;
+    text-decoration: none;
+}
+
+
+/* 사이드바 영역 */
+#sideBar {
+    width: 200px;
+    float: left;
+    padding: 20px;
+    margin-left: 30px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* 그리드를 이용해서, 2분할 했고, 
+section을 div로 감싸서 id article  */
+#article {
+    margin-left: 50px;
+}
+
+
+/* 추가 작업, 
+1 headline 아이디를 가진 영역 안쪽 부분 배치를 flex 형태로 변경. 
+2 반응형, 768 px 이하 일 경우, 하나씩 세로 로 배치 */
+section[id^="headline"] {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+section[id^="headline"] .detail,
+section[id^="headline"].schedule {
+    flex: 1;
+}
+
+/* 선 기준으로 위에 코드는 큰화면 : pc 화면 1024 px 이상 */
+/* ====================================================================== */
+/* 선 기준으로 아래 코드는 작은 화면 : 태블릿 화면 768 px 이하 */
+@media only screen and (max-width: 768px) {
+
+    /* ✅ headline 섹션 내부를 세로 배치로 전환 */
+    #headline {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .detail {
+        flex-direction: column;
+    }
+
+    #headline .detail,
+    #headline .schedule {
+        width: 100%;
+    }
+
+    .detail>img {
+        width: 50%;
+        /* 한 줄에 적당한 너비 */
+        margin-right: 0;
+        border-radius: 10px;
+    }
+
+    /* ✅ layout: aside와 article을 세로 배치 (1열) */
+    .contents {
+        grid-template-columns: 1fr;
+        /* ✅ 1열 구조로 전환 */
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    #sideBar {
+        float: none;
+        width: 100%;
+        /* ✅ 최대 너비 제한 */
+        margin: 5px;
+        /* ✅ 중앙 정렬 */
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    #article {
+        grid-column: 1 / -1;
+        /* 전체 너비 차지 */
+        padding: 20px;
+        max-width: 95%;
+        /* ✅ 너무 꽉 차는 것 방지 */
+        margin: 0 auto;
+        /* ✅ 중앙 정렬 */
+    }
+
+
+
+    /* ✅ 드롭다운 메뉴 전환용 설정 */
+    header {
+        height: auto;
+        min-height: 100px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+
+    }
+
+    #menuToggle {
+        display: block;
+        align-self: flex-end;
+    }
+
+    #topMenu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #f8f8f8;
+        padding: 10px;
+        border: 1px solid #ddd;
+        width: 100%;
+        margin-top: 0;
+        /* ✅ 버튼 아래에 자연스럽게 붙도록 */
+    }
+
+    #topMenu.active {
+        display: flex;
+    }
+
+    #topMenu>li {
+        float: none;
+    }
+
+    #topMenu>li>a {
+        color: #333;
+        padding: 10px 15px;
+    }
+
+    #topMenu>li>a:hover {
+        color: coral;
+    }
+
+    /* 푸터 영역 */
+    #bottomMenu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    #bottomMenu ul li {
+        border: none;
+        padding: 8px 0;
+    }
+
+    #bottomMenu ul li a {
+        font-size: 16px;
+        color: #333;
+    }
+
+    footer {
+        padding: 20px 15px;
+    }
+
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            padding: 16px;
+            border: 5px solid pink;
+        }
+
+        /* 애니메이션 설정 후, 적용해보기 */
+        /* 순서1 
+        설정 , 정의*/
+        @keyframes fadeSlideIn {
+
+            /* 초기, 중간, 마지막 단계 총 3단계 화면에 표시 */
+            0% {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9) rotate(-5deg);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: translateY(10px) scale(1.02) rotate(2deg);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotate(0deg);
+            }
+        }
+
+        /* 순서2, 적용 */
+        .img-wrapper {
+            background-color: white;
+            border-radius: 8px;
+            padding: 8px;
+            text-align: center;
+            /* 트랜지션 작업 진행하기 
+            1. 배경색 변경, 2. 확대
+            */
+            /* transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; */
+
+            /* 애니메이션 적용해보기 */
+            /* 1.animation-name 적용할 키프레임 이름 */
+            animation-name: fadeSlideIn;
+            /* 2. animation-duration : 얼마나 오래 지속할지  */
+            animation-duration: 1.5s;
+            /* 3.  animation-timing-function: 가속도 곡선, 천천히 진입, 중간 빠르고, 나올때는 천천히 */
+            animation-timing-function: ease-in-out;
+            /* 4. animation-delay: 시작 전 대기 시간 */
+            animation-delay: 0.2s;
+            /* 5. animation-iteration-count : 반복 횟수, infinite 무한대 */
+            animation-iteration-count: 1;
+            /* 6. animation-direction: 정방향, reverse 역방향,  */
+            animation-direction: normal;
+            /* 7.  animation-fill-mode: 종료 후 , 스타일 유지 여부, forwards, backward, both */
+            animation-fill-mode: both;
+            /* 8.animation-play-state : 진행 할지, 멈추지 여부 */
+            animation-play-state: running;
+        }
+
+        .img-wrapper:hover {
+            background-color: aqua;
+            transform: scale(1.03);
+        }
+
+        .img-wrapper img {
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            display: block;
+            /* 0 : 위쪽 , 아랫쪽 의미, auto : 좌, 우 의미 -> 가운데 정렬, 자주 쓰는 패턴 */
+            margin: 0 auto;
+        }
+
+        .test1 {
+            border: 2px solid blue;
+        }
+    </style>
+    <h2>나의 사진첩, transition 테스트 공간 </h2>
+    <div class="container">
+        <!-- 다른 클래스를 여러 개 적용시, 구분자가 공백임. 
+        예시) class="img-wrapper test1", 2개의 클래스가 적용된 상황. -->
+        <div class="img-wrapper test1">
+            <img src="img/test2.jpg" alt="샘플 사진">
+        </div>
+        <div class="img-wrapper test1">
+            <img src="img/test1.jpg" alt="샘플 사진">
+        </div>
+        <div class="img-wrapper test1">
+            <img src="img/test3.png" alt="샘플 사진">
+        </div>
+    </div>
+</body>
+
+</html>

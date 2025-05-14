@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>넷플릭스 따라해보기</title>
+    <!-- Font Awesome CDN (버전 6 기준) -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+    <!-- 폰트 어썸 아이콘 이용 설정1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/netflix.css">
+</head>
+
+<body>
+    <!-- 헤더 부분 -->
+    <header>
+        <nav>
+            <h1 class="logo">부산it501</h1>
+            <div>
+                <!-- 폰트 어썸 아이콘 이용 설정2 -->
+                <button class="lang">
+                    <i class="fa-solid fa-globe">한국어</i>
+                </button>
+                <button>로그인</button>
+            </div>
+        </nav>
+
+        <div class="header-content">
+            <h2>열공 해서 스펙업 , 취업 하는 과정</h2>
+            <h3>꾸준히 출결해서, 원하는 목표를 이루자!!!</h3>
+            <p>문의사항 있으면 언제든 저에게 이야기 해주시면 상담 및 조취를 빠르게 취해 드리겠습니다.
+            </p>
+            <form class="add-email">
+                <input type="email" placeholder="이메일 주소" required>
+                <button type="submit">보내기</button>
+            </form>
+
+        </div>
+    </header>
+
+    <!-- 배너 부분 :section -->
+    <section id="banner">
+        <div class="banner-content">
+            <h3>열심히 해서 좋은 프로젝트 결과를 만들어 드립니다.</h3>
+            <p>웹, 모바일, 빅데이터, ai 까지 모두 챙기세요.</p>
+            <button>자세히 알아보기</button>
+        </div>
+        <h2>신상 웹, 모바일, 빅데이터, ai 과정 둘러보기</h2>
+        <select class="select-menu">
+            <option value="web">웹 과목</option>
+            <option value="mobile">모바일 과목</option>
+            <option value="bigdata">빅데이터 과목</option>
+            <option value="ai">인공지능 과목</option>
+        </select>
+
+    </section>
+
+    <!-- 멤버쉽 부분 :section-->
+    <section id="membership">
+        <h2>수강을 하시면</h2>
+        <div class="membership-content">
+            <h3>수료 후 혜택</h3>
+            <p>공식 6개월 취업 알선 및 지원</p>
+            <p>모의 면접 및 이력서 , 자소서 꼼꼼히 1:1 첨삭, 담임강사, 취업 지원 선생님도 지원</p>
+            <button>자세히 알아보기</button>
+        </div>
+    </section>
+
+    <!-- 선택 가이드 부분 :section-->
+    <section id="choice">
+        <h2>과목별 공부 가이드</h2>
+        <div class="choice-content">
+            <!-- 카드 레이아웃 4개 임의로 설정하기 -->
+            <div class="card">
+                <h3>웹 과목</h3>
+                <p>pc, 모바일 화면 및 작업(반응형)</p>
+                <div class="subject-img">
+                    <img src="" alt="샘플이미지">
+                </div>
+            </div>
+            <div class="card">
+                <h3>모바일 과목</h3>
+                <p>플러터를 이용한 안드로이드&ios 개발</p>
+                <div class="subject-img">
+                    <img src="" alt="샘플이미지">
+                </div>
+            </div>
+            <div class="card">
+                <h3>빅데이터 과목</h3>
+                <p>데이터 수집, 정제, 분석, 저장, 시각화 해보기</p>
+                <div class="subject-img">
+                    <img src="" alt="샘플이미지">
+                </div>
+            </div>
+            <div class="card">
+                <h3>인공지능 과목</h3>
+                <p>머신러닝, 딥러닝을 활용한 회귀 및 이미지 처리</p>
+                <div class="subject-img">
+                    <img src="" alt="샘플이미지">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- FAQ :section-->
+    <section id="faq">
+        <h2>자주하는 질문과 답변</h2>
+        <ul>
+            <li>
+                <input type="radio" name="accordion" id="first">
+                <label for="first">복습은 어떻게 하나요? </label>
+                <div class="content">
+                    <p> 1 되도록 수업 참여 우선이고,
+                        2 다시 한번 강사가 진행한 부분을 가급적 여러번 따라하기
+                        3 아는 부분과 모르는 부분의 체크
+                        4 정리(노션, 원노트, 블로그, 개인 정리가능한 도구)
+                    </p>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="accordion" id="second">
+                <label for="second">과정중 자격증 준비를 같이 하는게 좋을까요? </label>
+                <div class="content">
+                    <p> 1 정처기 또는 빅데이터 관련 자격증 , 자격증 결론, 본인 외워서,
+                        시험 응시 후 취득하는 과정,
+                        저희 과정, 7개월 학습 습관 만들고, 실제로 업무, 창업, 프로젝트
+                        실제로 할수 있는 과정,
+                    </p>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="accordion" id="third">
+                <label for="third">과정중 어학 공부를 같이 하는게 좋을까요? </label>
+                <div class="content">
+                    <p> 회사에 어학 관련 자격 요건을 물어 보면 준비를 하면됨.
+                        1 대기업 지원 목적, 2 해외 취업 준비.
+                        개발만 열심히 하셔도 됩니다.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="accordion" id="fourth">
+                <label for="fourth">과정중 영어를 잘해야 할까요? </label>
+                <div class="content">
+                    <p>개인적인 기본적인 영어를 할수 있다면, 예를 들어
+                        gpt 기본 검색을 할수 있고, 기본 리딩이 된다면 충분하다고
+                        생각함. 왜냐하면? 관련 문서를 찾을 경우가 많고,
+                        영어 원서로 많이 되어있음. 하지만, 요즘, 번역기 굉장히 잘
+                        되어 있어서, 기본적인 영어만 해도 될것같습니다.
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <div class="newsletter">
+            <p>밴드에 가입 신청하시면, 확인 후 승인 해드립니다.</p>
+            <form class="add-email">
+                <input type="email" placeholder="이메일 주소" required>
+                <button type="submit">보내기</button>
+            </form>
+        </div>
+    </section>
+    <!-- 푸터 -->
+    <footer>
+        <div class="footer-content">
+            <div class="col left">
+                <ul class="footer-nav">
+                    <li><a href="#">학원안내</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보 취급방침</a></li>
+                    <li><a href="#">이용안내</a></li>
+                </ul>
+                <div class="footer-info">
+                    <p>상호: 부산it501 (담당강사: 이상용)</p>
+                    <p>주소 : 부산광역시 부산진구 중앙대로 706</p>
+                    <p>전화 : 051-803-5600</p>
+                    <p>사업자등록번호 : 123-45-67890</p>
+                </div>
+            </div>
+            <div class="col center">
+                <h2>고객센터</h2>
+                <h3>070-803-5600</h3>
+                <p>월-금 09:00-18:00</p>
+                <ul class="socials">
+                    <li><a href="#"><i></i></a></li>
+                    <li><a href="#"><i></i></a></li>
+                    <li><a href="#"><i></i></a></li>
+                </ul>
+            </div>
+            <div class="col right">
+                <h2>커뮤니티</h2>
+                <p><a href="#">공지사항</a></p>
+                <p><a href="#">이벤트</a></p>
+                <p><a href="#">상담 Q&A</a></p>
+            </div>
+        </div>
+        <div class="copyright">
+            <!-- HTML 엔티티라고 하고, &로 시작하고 ; 끝남. 
+            특수 문자를  HTML 코드 안에서 안전하게 표현하기 위한 방식 -->
+            <p>Copyright &copy; 부산it501. All rights reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #grid {
+            border: 5px solid pink;
+            /* grid 행, 열을 기준으로 배치하는 속성 */
+            display: grid;
+            /* grid-template-columns 열 기준으로 배치 
+            1열의 크기 150px, 
+            fr 는 남은 공간을 다 차지 */
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        div {
+            border: 5px solid gray;
+        }
+    </style>
+    <!-- div 태그의 역할, 단순 요소를 묶어주는 역할, 
+    블록 레벨 -->
+    <div id="grid">
+        <div>
+            NAVIGATION
+        </div>
+        <div>
+            ARTICLE
+        </div>
+        <div>
+            ARTICLE2
+        </div>
+    </div>
+</body>
+
+</html>

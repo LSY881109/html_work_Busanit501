@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드를 활용한 반응형 사진첩 예시</title>
+</head>
+
+<body>
+    <style>
+        .gallery {
+            display: grid;
+            /* grid-template-columns: repeat(컬럼의 갯수, 크기) */
+            /* grid-template-columns: 150px 1fr 1fr , 열이 3개인 경우, 수동
+            grid-template-columns: repeat(auto-fit : 자동으로 열의 갯수 지정 */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+            /* row-gap: 20px; */
+            /*행간격을 띄우기*/
+
+            /* column-gap: 20px; */
+            /*열간격을 띄우기*/
+
+            gap: 20px;
+            /*행,열 동시에 간격을 띄우기*/
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            /*이미지 비율 유지하며 채우기 */
+
+        }
+    </style>
+    <div class="gallery">
+        <img src="img/test1.jpg" alt="샘플사진1">
+        <img src="img/test2.jpg" alt="샘플사진2">
+        <img src="img/test3.png" alt="샘플사진3">
+        <img src="img/test4.jpg" alt="샘플사진4">
+        <img src="img/test5.jpg" alt="샘플사진5">
+        <img src="img/test6.jpg" alt="샘플사진6">
+        <img src="img/test7.jpg" alt="샘플사진7">
+    </div>
+
+</body>
+
+</html>

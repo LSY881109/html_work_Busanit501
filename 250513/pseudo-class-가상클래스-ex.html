@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        a:hover {
+            color: red;
+        }
+
+        /* 요소에 포커스(커서 진입)시 파란색 테두리로 설정 */
+        input:focus {
+            border: 10px solid blue;
+        }
+
+        /* 버튼을 누르고 있는 동안 배경 초록, 글자 흰색 변경 */
+        button:active {
+            background: green;
+            color: white;
+        }
+
+        /* ul 리스트에서 첫 번째 항목 의미하고, 옵션 글자색 파란색 변경,  */
+        ul li:first-child {
+            color: blue;
+        }
+
+        /* ul 리스트에서 마지막 번째 항목 의미하고, 옵션 글자색 빨간색 변경,  */
+        ul li:last-child {
+            color: red;
+        }
+
+        /* ul 리스트에서 2 번째 항목 의미하고, 옵션 글자색 파란색 변경,  */
+        ul li:nth-child(2) {
+            font-weight: bold;
+        }
+
+        /* p 태그 중에서 클래스가 highlight을 제외한 나머지 요소를 가리킴. not  반대  */
+        p:not(.highlight) {
+            color: gray;
+        }
+
+        /* 체크박스가 체크되면 label 색상을 초록으로 변경 함.  */
+        input[type="checkbox"]:checked+label {
+            color: green;
+        }
+
+        /* disabled : 입력창에 무언가 작업 못함(읽기전용, 서버에 데이터 전달 못함) */
+        input:disabled {
+            background: #eee;
+        }
+
+        /* 내용이 없는 div 는 빨간 점선 테두와 높이 마진 설정. */
+        div:empty {
+            height: 30px;
+            border: 2px dashed red;
+            margin-bottom: 10px;
+        }
+
+        /* 필수 입력 항목은 왼쪽에 주항색 선으로 표기함 
+        이메일 필수 기입 조건인데, 누락하고, 서버에 회원 가입 버튼을 누르면, 
+        html에서 기본 유효성 체크를 해서, 진행이 안됨. 즉, 반드시 이 항목을 채워야함.
+        필수 항목
+        */
+        input:required {
+            border-left: 5px solid orange;
+        }
+
+        /* 올바른 값이 입력이 된 경우, 초록색 */
+        input:valid {
+            background: #e0ffe0;
+        }
+
+        /* 잘못된 값이 입력이 된 경우, 분홍색 */
+        input:invalid {
+            background: #ffe0e0;
+        }
+
+        /* section 내부의 p 태그 중 첫번째 */
+        section p:first-of-type {
+            color: blue;
+        }
+
+        /* section 내부의 p 태그 중 마지막번째 */
+        section p:last-of-type {
+            color: red;
+        }
+
+        /* section 내부의 p 태그 중 2번째 */
+        section p:nth-of-type(2) {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 자주 사용하는 가상 클래스 개념. 
+행동, 요소의 위치, 상태, 속성 스타일을 동적으로 지정할 때 사용
+가상 클래스는 , 기호 (:) 기준으로 사용함. 
+기본 문법 예시 
+선택자 : 가상클래스 {
+    스타일 속성 : 값
+}
+ 대표 가상 클래스 예시 정리
+
+| 가상 클래스               | 설명                             |
+| -------------------- | ------------------------------ |
+| `:hover`             | 마우스를 요소 위에 올렸을 때               |
+| `:active`            | 요소를 클릭하고 있는 순간                 |
+| `:focus`             | 입력 요소에 포커스가 갔을 때               |
+| `:visited`           | 방문한 링크                         |
+| `:link`              | 방문하지 않은 링크                     |
+| `:first-child`       | 부모의 첫 번째 자식 요소                 |
+| `:last-child`        | 부모의 마지막 자식 요소                  |
+| `:nth-child(n)`      | n번째 자식 요소                      |
+| `:not(선택자)`          | 특정 선택자가 아닌 요소                  |
+| `:checked`           | 체크된 input 요소 (checkbox, radio) |
+| `:disabled`          | 비활성화된 form 요소                  |
+| `:enabled`           | 활성화된 form 요소                   |
+| `:empty`             | 내용이 없는 요소                      |
+| `:first-of-type`     | 특정 태그 중 첫 번째 요소                |
+| `:last-of-type`      | 특정 태그 중 마지막 요소                 |
+| `:nth-of-type(n)`    | 특정 태그 중 n번째 요소                 |
+| `:required`          | 필수 입력 요소                       |
+| `:valid`, `:invalid` | 입력값 유효성 검사 결과에 따른 상태           |  -->
+
+    <a href="#">링크에 마우스를 올려보세요</a><br><br>
+    <input type="text" placeholder="포커스 테스트"><br><br>
+    <button>클릭 테스트</button><br><br>
+
+    <ul>
+        <li>1번 항목</li>
+        <li>2번 항목</li>
+        <li>3번 항목</li>
+        <li>4번 항목</li>
+        <li>5번 항목</li>
+        <li>6번 항목</li>
+    </ul>
+
+    <p class="highlight">강조된 문장</p>
+    <p>일반 문장</p>
+
+    <input type="checkbox" id="check1"><label for="check1">체크하세요</label><br><br>
+    <input type="text" disabled value="비활성 입력"><br><br>
+
+    <div></div>
+
+    <input type="text" required placeholder="필수 입력">
+    <input type="email" placeholder="이메일 입력"><br><br>
+
+    <section>
+        <p>첫 번째 단락</p>
+        <p>두 번째 단락</p>
+        <p>세 번째 단락</p>
+    </section>
+
+</body>
+
+</html>
