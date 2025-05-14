@@ -1,0 +1,116 @@
+/* 구글 웹폰트 import  링크 복사, 나눔 펜 스크립트 이용중 */
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&family=Nanum+Pen+Script&display=swap');
+
+/* 전체 배경 및 폰트 설정 */
+body {
+    font-family: "Nanum Pen Script", cursive;
+    margin: 40px;
+    background: #f8f9fa;
+
+    /* 회원 가입 폼을 화면의 정중앙에 배치, flex 이용 */
+    /* 화면 전체 높이  */
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    /* 가로로 가운데 */
+    justify-content: center;
+    /* 세로로 가운데 */
+    align-items: center;
+
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 폼 스타일  */
+form {
+    background: #fff;
+    padding: 20px;
+    border: 2px solid #ccc;
+    width: 400px;
+    border-radius: 8px;
+
+    /* 내용 요소들을 세로 정렬 해보기, flex 이용하기 */
+    display: flex;
+    flex-direction: column;
+    /* 요소들의 가로 세로 간격 */
+    gap: 15px;
+}
+
+
+/* fieldset {
+    display: flex;
+    
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+} */
+
+fieldset {
+    display: flex;
+    /* 요소가 많아도 다음 줄로 자동 줄바꿈 */
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+/* 모든 입력 요소들에 통일된 스타일 적용 */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="file"] {
+    width: 95%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    font-family: "Nanum Pen Script";
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 30px;
+    padding: 20px;
+    background: #e9ecef;
+    border-radius: 6px;
+}
+
+/* 프로필 이미지 모양 꾸미기 */
+#profilePreviewBox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#profilePreview {
+    width: 150px;
+    height: 150px;
+    /* 테두리 부분을 동그란 모양으로 만들 때 자주 쓰는 기법 */
+    border-radius: 50%;
+    /* 비율 유지하며 자르기 */
+    object-fit: cover;
+    border: 2px solid #ccc;
+}

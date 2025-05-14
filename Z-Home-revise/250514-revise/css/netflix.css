@@ -1,0 +1,239 @@
+/* 전체적인 태그에 초기화 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전체 body 하위의 모든 태그에 적용.  */
+body {
+    background-color: #111;
+    color: #fff;
+}
+
+section {
+    padding: 40px 10%;
+}
+
+section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+section h3 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* 헤더 부분 작업 */
+header {
+    width: 100%;
+    height: 100vh;
+    /* 1) 배경 이미지 
+    해당 이미지의 경로를 잡는 속성
+    ../ : 현재 css 파일에서(netflix.css 파일에서), 하나 폴더 위로 이동
+    url(../img/test3.jpg)
+    2) 그라데이션 효과  
+    background: linear-gradient([방향], 색상1,색상2,색상3..);
+    [방향]옵션 : top, bottom, left, right, 각도 to right, 45deg
+    색상: 시작 색상, 끝 색상, 중간 색생등 여러 개 지정 가능. 
+    rgba(r,g,b,a):빨,초,파+ 투명도 (0~1)
+    현재 상태는 방향이 없어서, 위/아래 모두 같은 색이고, 
+    결론, 반투명 검정색을 만드는 목적.
+    */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/test3.jpg);
+    background-size: cover;
+    padding: 10px 8%;
+    /* 기준위치를 정함 */
+    position: relative;
+}
+
+nav {
+    display: flex;
+    /* 주축 방향의 가로 정렬 */
+    justify-content: space-between;
+    /* 교차 축 방향의 세로 정렬 */
+    align-items: center;
+    padding: 10px 0;
+}
+
+nav .logo {
+    font-size: 32px;
+    color: #db0001;
+    cursor: pointer;
+}
+
+nav button {
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    background-color: #db0001;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 24px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.lang {
+    /* inline-flex : css Flexbox 레이아웃을 적용하면서 
+    요소 자체는 인라인 요소 처럼 취급. 
+    flex : 블록 요소 + css Flexbox 레이아웃을 적용 */
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #fff;
+    background-color: transparent;
+}
+
+.header-content {
+    /* 절대위치 , header 기준으로 배치*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* 수직, 수평 가운데 정렬 자주 쓰는 방식 
+    원리: 자기 너비의 50%만큼 왼쪽으로 이동
+    자기 높이의 50%만큼 위로 이동*/
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.header-content h2 {
+    font-size: 60px;
+    line-height: 1.4;
+    font-weight: 600;
+    max-width: 650px;
+    margin-bottom: 20px;
+}
+
+.header-content h3 {
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.add-email {
+    background-color: #fff;
+    border-radius: 4px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+
+    /* 요소 내부의 콘텐츠가 요소 크기를 초과할 경우, 초과된 부분을
+    화면에 보이지 않게 설정 */
+    overflow: hidden;
+}
+
+.add-email input {
+    border: 0;
+    outline: 0;
+
+    /* flex에서 레이아웃에서 유연하게 공간 
+    분배를 지정하는 단축 속성 자동으로 남은 공간 차지한다 */
+    flex: 1;
+    margin-left: 2opx;
+}
+
+.add-email button {
+    border: 0;
+    background-color: #db0001;
+    color: #fff;
+    font-size: 16px;
+    padding: 15px 30px;
+    cursor: pointer;
+}
+
+/* 반응형 헤더 부분 작업 */
+/* 가로 크기가 768px 이하 일 경우의 css */
+/* only screen : 오직 화면만 처리함.  */
+@media only screen and (max-width: 768px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    nav button {
+        padding: 5px 10px;
+    }
+
+    .lang {
+        padding: 4px 8px;
+    }
+
+    .header-content {
+        /* 초기값 또는 상속값으로 되돌리는 옵션,
+        부모로 부터 상속이 가능하면 상속 받고,
+        상속 불가하면, 초기값으로 리셋  */
+        position: unset;
+        transform: none;
+        padding-top: 150px;
+    }
+}
+
+    .header-content h2 {
+    font-size: 48px;
+    line-height: 50px;
+}
+
+.header-content h3 {
+    font-size: 20px;
+
+}
+
+.add-email button {
+    font-size: 12px;
+    padding: 10px 15px;
+
+}
+
+/* 배너 부분 작업 */
+.banner-content {
+    border-radius: 6px;
+    background: linear-gradient(to right, #651c3d 0%, #280a2b 60%);
+    padding: 40px;
+    margin-bottom: 40px;
+
+}
+
+#banner p {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+}
+
+#banner button {
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    background: rgba(128, 128, 128, 0.4);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.select-menu {
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 24px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.select-menu option {
+    background-color: #2b2b2b;
+    color: #fff;
+}
+
+
+/* 멤버쉽 부분 작업 */
+
+/* 선택 가이드 부분 작업 */
+
+/* 반응형 선택 가이드 부분 작업 */
+
+/* FAQ 부분 작업 */
+
+/* footer 부분 작업 */
+
+/* 반응형 footer 부분 작업 */
