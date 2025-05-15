@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 폼</title>
+    <!-- css  외부 파일 연결(불러오기) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>로그인 예시 폼</h1>
+        <!-- 회원 가입 입력 폼 시작 -->
+        <!-- form 태그는 무언가 입력창들의 모음집, 그룹화, 
+     클라이언트(앞단)-> 서버 전달시 사용 -->
+        <form id="signupForm">
+
+            <!-- 추가 작업 프로필 이미지 표시하는 화면  -->
+            <div id="profilePreviewBox">
+                <img id="profilePreview" src="img/user_profile.png" alt="프로필 미리보기">
+
+            </div>
+
+            <!-- 유저명, 텍스 입력창  -->
+            <label>
+                유저명 : <input type="text" name="username" placeholder="유저명을 입력해주세요" required>
+            </label>
+            <!-- 비밀번호 입력 -->
+            <label>
+                패스워드 : <input type="password" name="password">
+            </label>
+            <!-- 체크박스 이용해서, 그룹: 취미 선택 -->
+            <!-- <fieldset>
+                <legend>취미를 선택하세요</legend>
+                <label>운동 <input type="checkbox" name="hobby" value="운동"></label>
+                <label>게임 <input type="checkbox" name="hobby" value="게임"></label>
+                <label>영화보기<input type="checkbox" name="hobby" value="영화보기"></label>
+                <label>독서<input type="checkbox" name="hobby" value="독서"></label>
+            </fieldset> -->
+
+            <!-- 라디오 버튼 : 성별 선택 -->
+            <!-- <label>
+                성별 : <input type="radio" name="gender" value="남"> 남
+                <input type="radio" name="gender" value="여"> 여
+            </label> -->
+
+            <!-- 나이 숫자 입력 -->
+            <!-- <label>
+                나이 : <input type="number" name="age" min="1" max="100">
+            </label> -->
+
+            <!-- 날짜 입력 : 생년월일  -->
+            <!-- <label>
+                생년월일 : <input type="date" name="date">
+            </label> -->
+            <!-- 이메일 입력  -->
+            <!-- <label>
+                이메일 : <input type="email" name="email" required>
+            </label> -->
+            <!-- 프로필 사진 등록: 파일첨부  -->
+            <!-- <label>
+                프로필 사진 등록 : <input type="file" name="file">
+            </label> -->
+            <!-- 히든 필드: 사용자에게 보이지 않고, 서버에 전달하는 용도  -->
+            <input type="hidden" name="user_id" value="test1234">
+
+            <!-- 폼 제출 하는 용도의 버튼 -->
+            <button type="submit">로그인</button>
+            <button type="reset">아이디/비밀번호 찾기</button>
+
+        </form>
+    </div>
+
+    <!-- 서버가 따로 없어서, 입력된 내용을 자바스크립트 이용해서, 
+    화면에 출력하는 형식, 출력 화면 만들기 -->
+    <!-- 결과 출력 영역 -->
+    <div id="result">
+        <h3>입력한 정보 결과 확인</h3>
+        <!-- pre  태그 (preformatted text): 
+         미리 서식을 유지한 텍스트 출력하는 용도 
+        보통 코드나, 로그 등, 줄바꿈, 공백, 들여쓰기 등을 그대로 
+        유지해서 출력하는 태그 -->
+        <pre id="output"></pre>
+    </div>
+    <!-- 외부 js 파일 연결 -->
+    <script src="js/style.js"></script>
+</body>
+
+</html>
